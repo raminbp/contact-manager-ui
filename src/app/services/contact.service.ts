@@ -7,7 +7,7 @@ import {Observable, of} from 'rxjs';
   providedIn: 'root'
 })
 export class ContactService {
-  URL = 'http://localhost:4000/contacts';
+  URL = 'https://cgm-contact-manager-backend.herokuapp.com/contacts';
 
   constructor(private httpClient: HttpClient) {
   }
