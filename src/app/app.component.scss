@@ -1,0 +1,33 @@
+.contacts-list {
+  width: 100%
+}
+
+.container {
+  padding: 30px;
+}
+
+
+.action-link {
+  a {
+    margin-right: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.mat-column-action {
+  text-align: right;
+}
+
+.mat-toolbar {
+  position: relative;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}
+
+.title {
+  margin-right: 20px;
+}

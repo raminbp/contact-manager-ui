@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>{{action}} CONTACT</h1>
+<div mat-dialog-content class="form-container">
+<!--  <form #contactForm="ngForm" [formGroup]="ContactForm">-->
+  <form [formGroup]="contactForm">
+    <div *ngIf="action !== 'DELETE'; else elseTemplate ">
+      <mat-form-field>
+        <input placeholder="Name" matInput [(ngModel)]="formData.name" name="name" formControlName="name" required>
+        <mat-error *ngIf="name.invalid">Please enter a valid name like <i>Ramin Bakhshpour</i></mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input placeholder="Phone" matInput [(ngModel)]="formData.phone" name="phone"  formControlName="phone" required>
+        <mat-error *ngIf="phone.invalid">Please enter a valid phone number like <i>+98 1234567899</i></mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input placeholder="Email" matInput [(ngModel)]="formData.email" name="email" formControlName="email" required>
+        <mat-error *ngIf="email.invalid">Please enter a valid email like <i>example@email.com</i></mat-error>
+      </mat-form-field>
+    </div>
+
+    <ng-template #elseTemplate>
+      Are you sure about removing <b>{{formData.name}}</b> from contacts?
+    </ng-template>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{action}}</button>
+  <button mat-button (click)="closeForm()" mat-flat-button color="warn">CANCEL</button>
+</div>
